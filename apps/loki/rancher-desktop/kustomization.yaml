@@ -1,0 +1,17 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+namespace: monitoring
+generatorOptions:
+  disableNameSuffixHash: true
+configMapGenerator:
+  - name: values-loki-rancher-desktop
+    files:
+      - values.loki.rancher-desktop.yaml
+  - name: values-promtail-rancher-desktop
+    files:
+      - values.promtail.rancher-desktop.yaml
+resources:
+  - ../base
+patches:
+  - path: patch-loki-helm-release.yaml
+  - path: patch-promtail-helm-release.yaml

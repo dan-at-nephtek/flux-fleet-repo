@@ -1,0 +1,14 @@
+resources:
+  limits:
+    memory: 128Mi
+  requests:
+    cpu: 100m
+    memory: 128Mi
+config:
+  clients:
+    -url: http://loki-gateway/loki/api/v1/push
+    tenant_id: 1
+serviceMonitor:
+  enabled: true
+  labels:
+    release: kube-prometheus-stack
