@@ -1,0 +1,21 @@
+prometheus:
+  prometheusSpec:
+    replicas: 1
+    resources:
+      requests:
+        memory: 520Mi
+        cpu: 250m
+
+grafana:
+  additionalDataSources:
+    - name: Loki
+      url: http://loki-gateway.logging.svc.cluster.local
+      type: loki
+  monitoring:
+    rules:
+      labels:
+        release: kube-prometheus-stack
+  serviceMonitor:
+    enabled: true
+    labels:
+      release: kube-prometheus-stack
