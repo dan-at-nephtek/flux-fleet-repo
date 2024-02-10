@@ -10,3 +10,5 @@ monitoring:
   serviceMonitor:
     labels:
       release: kube-prometheus-stack
+rbac:
+  pspEnabled: false
