@@ -47,7 +47,7 @@ spec:
     kind: GitRepository
     name: flux-system
   serviceAccountName: kustomize-controller
-  path: ./infrastructure/gatekeeper/rancher-desktop
+  path: ./apps/gatekeeper/rancher-desktop
   prune: true
   wait: true
   timeout: 10m
