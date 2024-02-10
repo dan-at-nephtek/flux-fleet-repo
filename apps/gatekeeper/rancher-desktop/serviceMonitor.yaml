@@ -1,0 +1,35 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  labels:
+    app: gatekeeper
+    control-plane: controller-manager
+    release: kube-prometheus-stack
+  name: gatekeeper-controller-manager-metrics
+spec:
+  endpoints:
+    - port: http-metrics
+      scheme: http
+  selector:
+    matchLabels:
+      app: gatekeeper
+      control-plane: controller-manager
+      release: gatekeeper
+---
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  labels:
+    app: gatekeeper
+    control-plane: audit-controller
+    release: kube-prometheus-stack
+  name: gatekeeper-audit-controller-metrics
+spec:
+  endpoints:
+    - port: http-metrics
+      scheme: http
+  selector:
+    matchLabels:
+      app: gatekeeper
+      control-plane: audit-controller
+      release: gatekeeper
