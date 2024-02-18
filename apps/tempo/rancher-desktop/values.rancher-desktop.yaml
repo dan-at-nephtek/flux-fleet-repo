@@ -1,0 +1,15 @@
+persistence:
+  enabled: true
+  storageClassName: local-path
+tempoQuery:
+  ingress:
+    annotations:
+      cert-manager.io/cluster-issuer: nephtek-com-issuer
+    enabled: true
+    hosts:
+      - tempo.k8s.nephtek.com
+    ingressClassName: nginx
+    tls:
+      - hosts:
+          - tempo.k8s.nephtek.com
+        secretName: tempo-k8s-nephtek-com-cert
