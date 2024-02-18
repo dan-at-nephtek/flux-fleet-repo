@@ -1,0 +1,31 @@
+controller:
+  config:
+    keep-alive: "360"
+  ingressClassResource:
+    default: true
+  kind: DaemonSet
+  metrics:
+    enabled: false
+    prometheusRule:
+      enabled: false
+    serviceMonitor:
+      enabled: false
+  resources:
+    limits:
+      cpu: 200m
+      memory: 200Mi
+    requests:
+      cpu: 10m
+      memory: 200Mi
+  service:
+    externalTrafficPolicy: Local
+    type: LoadBalancer
+defaultBackend:
+  enabled: true
+  resources:
+    limits:
+      cpu: 10m
+      memory: 20Mi
+    requests:
+      cpu: 10m
+      memory: 20Mi
