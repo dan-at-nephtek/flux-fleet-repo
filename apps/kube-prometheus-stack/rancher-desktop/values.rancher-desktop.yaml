@@ -19,3 +19,14 @@ grafana:
     enabled: true
     labels:
       release: kube-prometheus-stack
+  ingress:
+    enabled: true
+    ingressClassName: nginx
+    annotations:
+      cert-manager.io/cluster-issuer: nephtek-com-issuer
+    hosts:
+      - grafana.k8s.nephtek.com
+    tls:
+      - secretName: grafana-k8s-nephtek-com-cert
+        hosts:
+          - grafana.k8s.nephtek.com
