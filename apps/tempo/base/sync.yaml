@@ -11,7 +11,7 @@ spec:
       version: "1.x"
       sourceRef:
         kind: HelmRepository
-        name: tempo
+        name: grafana
         namespace: tempo
       interval: 1m
   install:
