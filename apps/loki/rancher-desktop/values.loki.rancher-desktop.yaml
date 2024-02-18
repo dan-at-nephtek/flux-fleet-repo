@@ -12,3 +12,13 @@ monitoring:
       release: kube-prometheus-stack
 rbac:
   pspEnabled: false
+ingress:
+  ingressClassName: nginx
+  annotations:
+    cert-manager.io/cluster-issuer: nephtek-com-issuer
+  hosts:
+    - loki.k8s.nephtek.com
+  tls:
+    - hosts:
+        - loki.k8s.nephtek.com
+      secretName: loki-k8s-nephtek-com-cert
