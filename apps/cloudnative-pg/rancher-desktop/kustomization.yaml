@@ -4,7 +4,7 @@ namespace: cnpg-system
 generatorOptions:
   disableNameSuffixHash: true
 configMapGenerator:
-  - name: values-cert-manager-rancher-desktop
+  - name: values-cloudnative-pg-rancher-desktop
     files:
       - values.rancher-desktop.yaml
 resources:
