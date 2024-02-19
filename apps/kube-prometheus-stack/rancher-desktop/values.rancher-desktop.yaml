@@ -1,3 +1,9 @@
+defaultRules:
+  rules:
+    kubeSchedulerAlerting: false
+    kubeProxy: false
+    kubeControllerManager: false
+
 prometheus:
   prometheusSpec:
     replicas: 1
