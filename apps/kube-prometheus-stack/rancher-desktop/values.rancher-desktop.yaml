@@ -4,6 +4,13 @@ defaultRules:
     kubeProxy: false
     kubeControllerManager: false
 
+kubeScheduler:
+  enabled: false
+kubeProxy:
+  enabled: false
+kubeControllerManager:
+  enabled: false
+
 prometheus:
   prometheusSpec:
     replicas: 1
