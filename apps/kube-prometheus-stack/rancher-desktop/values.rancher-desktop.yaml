@@ -23,6 +23,9 @@ grafana:
     - name: Loki
       url: http://loki-gateway.logging.svc.cluster.local
       type: loki
+    - name: Tempo
+      url: http://tempo.tempo:3100
+      type: tempo
   monitoring:
     rules:
       labels:

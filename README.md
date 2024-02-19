@@ -3,7 +3,7 @@ Flux Fleet Repository, as per Flux Multi-tenancy docs.
 
 To add a new cluster:
 
-# Create a Personal Access Token in Githup
+# Create a Personal Access Token in Github
 ## Use classic PAT, select "public_repo" (or "repo" if accessing private repositories)
 # Select a fleet repository.  Consider cloning from https://github.com/dan-at-nephtek/flux-fleet-repo
 # Use `flux bootstrap` to bootstrap the cluster into the git repository:
