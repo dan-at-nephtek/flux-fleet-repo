@@ -1,18 +1,18 @@
-apiVersion: kustomize.toolkit.fluxcd.io/v1
-kind: Kustomization
-metadata:
-  name: cilium
-  namespace: flux-system
-spec:
-  interval: 720m0s
-  sourceRef:
-    kind: GitRepository
-    name: flux-system
-  serviceAccountName: kustomize-controller
-  path: ./apps/cilium/rancher-desktop
-  prune: true
-  wait: true
-  timeout: 10m
+#apiVersion: kustomize.toolkit.fluxcd.io/v1
+#kind: Kustomization
+#metadata:
+#  name: cilium
+#  namespace: flux-system
+#spec:
+#  interval: 720m0s
+#  sourceRef:
+#    kind: GitRepository
+#    name: flux-system
+#  serviceAccountName: kustomize-controller
+#  path: ./apps/cilium/rancher-desktop
+#  prune: true
+#  wait: true
+#  timeout: 10m
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
@@ -20,9 +20,9 @@ metadata:
   name: namespaces
   namespace: flux-system
 spec:
-  dependsOn:
-    - name: cilium
-      namespace: flux-system
+#  dependsOn:
+#    - name: cilium
+#      namespace: flux-system
   interval: 720m0s
   sourceRef:
     kind: GitRepository
