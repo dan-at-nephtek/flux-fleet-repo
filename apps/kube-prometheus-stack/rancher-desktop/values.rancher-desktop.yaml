@@ -47,6 +47,19 @@ grafana:
     enabled: true
     labels:
       release: kube-prometheus-stack
+  resources:
+    limits:
+      memory: 128Mi
+    requests:
+      cpu: 100m
+      memory: 128Mi
+  sidecar:
+    resources:
+      limits:
+        memory: 100Mi
+      requests:
+        cpu: 10m
+        memory: 50Mi
   ingress:
     enabled: true
     ingressClassName: nginx
