@@ -6,5 +6,6 @@ resources:
     memory: 32Mi
 prometheus:
   monitor:
+    enabled: true
     additionalLabels:
       release: kube-prometheus-stack
