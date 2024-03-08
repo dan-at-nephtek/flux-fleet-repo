@@ -4,3 +4,7 @@ resources:
   requests:
     cpu: 10m
     memory: 32Mi
+prometheus:
+  monitor:
+    additionalLabels:
+      release: kube-prometheus-stack
