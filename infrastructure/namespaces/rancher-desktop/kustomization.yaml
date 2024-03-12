@@ -3,6 +3,7 @@ kind: Kustomization
 resources:
   - cert-manager.yaml
   - cnpg-system.yaml
+  - dank.yaml
   - gatekeeper-system.yaml
   - ingress.yaml
   - logging.yaml

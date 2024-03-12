@@ -53,3 +53,18 @@ applications are defined and maintained in the fleet repository.   Overlays for 
 can be provided in the fleet repository, even for apps and tenants maintained externally,
 providing centralized control and compliance for clusters, while delegating authority for
 applications and tenants to users of the cluster.
+
+Some kustomizations make use of SOPS for decrypting secrets (see the 'secrets' kustomization in
+`clusters/rancher-desktop/infrastructure.yaml` for an example).  These kustomziations make
+use of a secret `sops-gpg` to decrypt the secrets.  This secret must be created manually as
+part of the bootstrap process.
+
+To create the `sops-gpg` secret, use the process outlined on https://fluxcd.io/flux/guides/mozilla-sops/.
+The secret can be created using the command:
+
+```shell
+gpg --export-secret-keys --armor "${KEY_FP}" |
+kubectl create secret generic sops-gpg \
+--namespace=flux-system \
+--from-file=sops.asc=/dev/stdin
+```
