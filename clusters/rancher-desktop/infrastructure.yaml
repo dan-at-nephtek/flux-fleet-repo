@@ -91,7 +91,7 @@ spec:
   interval: 720m0s
   sourceRef:
     kind: GitRepository
-    name: flux-system
+    name: flux-apps
   serviceAccountName: kustomize-controller
   path: ./apps/kube-prometheus-stack/rancher-desktop
   prune: true
@@ -110,7 +110,7 @@ spec:
   interval: 720m0s
   sourceRef:
     kind: GitRepository
-    name: flux-system
+    name: flux-apps
   serviceAccountName: kustomize-controller
   path: ./apps/loki/rancher-desktop
   prune: true
@@ -148,7 +148,7 @@ spec:
   interval: 720m0s
   sourceRef:
     kind: GitRepository
-    name: flux-system
+    name: flux-apps
   serviceAccountName: kustomize-controller
   path: ./apps/cert-manager/rancher-desktop
   prune: true
@@ -167,7 +167,7 @@ spec:
   interval: 720m0s
   sourceRef:
     kind: GitRepository
-    name: flux-system
+    name: flux-apps
   serviceAccountName: kustomize-controller
   path: ./apps/ingress-nginx/rancher-desktop
   prune: true
