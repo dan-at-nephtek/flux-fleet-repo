@@ -16,7 +16,7 @@ apiVersion: source.toolkit.fluxcd.io/v1
 kind: GitRepository
 metadata:
   name: flux-apps
-  namespace: flux-tenant-dank
+  namespace: tenant-dank
 spec:
   interval: 1m0s
   ref:
