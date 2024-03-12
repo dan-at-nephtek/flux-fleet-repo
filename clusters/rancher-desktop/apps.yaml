@@ -54,7 +54,7 @@ spec:
   prune: true
   wait: true
   timeout: 10m
----
+--- #Test
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
