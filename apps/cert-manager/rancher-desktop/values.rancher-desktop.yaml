@@ -1,8 +1,0 @@
-extraArgs:
-  - --dns01-recursive-nameservers-only
-  - --dns01-recursive-nameservers=8.8.8.8:53
-installCRDs: true
-podDnsConfig:
-  nameservers:
-    - 8.8.8.8
-podDnsPolicy: None

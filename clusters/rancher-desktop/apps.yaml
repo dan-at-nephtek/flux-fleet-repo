@@ -10,7 +10,7 @@ spec:
   interval: 720m0s
   sourceRef:
     kind: GitRepository
-    name: flux-system
+    name: flux-apps
   serviceAccountName: kustomize-controller
   path: ./apps/tempo/rancher-desktop
   prune: true
@@ -29,7 +29,7 @@ spec:
   interval: 720m0s
   sourceRef:
     kind: GitRepository
-    name: flux-system
+    name: flux-apps
   serviceAccountName: kustomize-controller
   path: ./apps/kube-prometheus-stack/rancher-desktop
   prune: true

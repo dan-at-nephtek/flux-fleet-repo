@@ -1,3 +1,0 @@
-podAnnotations:
-  prometheus.io/port: "8888"
-  prometheus.io/scrape: "true"

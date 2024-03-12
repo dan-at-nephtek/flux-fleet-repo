@@ -129,7 +129,7 @@ spec:
   interval: 720m0s
   sourceRef:
     kind: GitRepository
-    name: flux-system
+    name: flux-apps
   serviceAccountName: kustomize-controller
   path: ./apps/gatekeeper/rancher-desktop
   prune: true
@@ -186,7 +186,7 @@ spec:
   interval: 720m0s
   sourceRef:
     kind: GitRepository
-    name: flux-system
+    name: flux-apps
   serviceAccountName: kustomize-controller
   path: ./apps/cloudnative-pg/rancher-desktop
   prune: true
