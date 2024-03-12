@@ -62,7 +62,7 @@ metadata:
   namespace: flux-system
 spec:
   dependsOn:
-    - name: gatekeeper
+    - name: namespaces
       namespace: flux-system
   interval: 720m0s
   sourceRef:
