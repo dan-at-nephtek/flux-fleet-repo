@@ -6,6 +6,7 @@ resources:
   - cnpg-system.yaml
   - gatekeeper-system.yaml
   - ingress.yaml
+  - keycloak.yaml
   - kube-bench.yaml
   - logging.yaml
   - monitoring.yaml
