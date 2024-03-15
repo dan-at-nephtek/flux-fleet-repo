@@ -222,7 +222,6 @@ spec:
     name: flux-apps
   serviceAccountName: kustomize-controller
   path: ./apps/keycloak/rancher-desktop
-  path: ./apps/keycloak/rancher-desktop
   prune: true
   wait: true
   timeout: 10m
