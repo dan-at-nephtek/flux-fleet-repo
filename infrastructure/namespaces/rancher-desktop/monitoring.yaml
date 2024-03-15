@@ -4,4 +4,5 @@ metadata:
   labels:
     kubernetes.io/metadata.name: monitoring
     name: monitoring
+    app: monitoring
   name: monitoring
