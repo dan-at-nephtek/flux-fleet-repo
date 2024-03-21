@@ -210,11 +210,11 @@ spec:
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
-  name: cloudnative-pg
+  name: backstage
   namespace: flux-system
 spec:
   dependsOn:
-    - name: kube-prometheus-stack
+    - name: cloudnative-pg
       namespace: flux-system
   interval: 720m0s
   sourceRef:
