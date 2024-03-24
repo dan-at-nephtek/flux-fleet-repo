@@ -93,43 +93,43 @@ spec:
   wait: true
   timeout: 10m
 ---
-apiVersion: kustomize.toolkit.fluxcd.io/v1
-kind: Kustomization
-metadata:
-  name: metallb
-  namespace: flux-system
-spec:
-  dependsOn:
-    - name: kube-prometheus-stack
-      namespace: flux-system
-  interval: 720m0s
-  sourceRef:
-    kind: GitRepository
-    name: flux-apps
-  serviceAccountName: kustomize-controller
-  path: ./apps/metallb/kind
-  prune: true
-  wait: true
-  timeout: 10m
----
-apiVersion: kustomize.toolkit.fluxcd.io/v1
-kind: Kustomization
-metadata:
-  name: metallb-ips
-  namespace: flux-system
-spec:
-  dependsOn:
-    - name: metallb
-      namespace: flux-system
-  interval: 720m0s
-  sourceRef:
-    kind: GitRepository
-    name: flux-apps
-  serviceAccountName: kustomize-controller
-  path: ./apps/metallb-ips/kind
-  prune: true
-  wait: true
-  timeout: 10m
+#apiVersion: kustomize.toolkit.fluxcd.io/v1
+#kind: Kustomization
+#metadata:
+#  name: metallb
+#  namespace: flux-system
+#spec:
+#  dependsOn:
+#    - name: kube-prometheus-stack
+#      namespace: flux-system
+#  interval: 720m0s
+#  sourceRef:
+#    kind: GitRepository
+#    name: flux-apps
+#  serviceAccountName: kustomize-controller
+#  path: ./apps/metallb/kind
+#  prune: true
+#  wait: true
+#  timeout: 10m
+#---
+#apiVersion: kustomize.toolkit.fluxcd.io/v1
+#kind: Kustomization
+#metadata:
+#  name: metallb-ips
+#  namespace: flux-system
+#spec:
+#  dependsOn:
+#    - name: metallb
+#      namespace: flux-system
+#  interval: 720m0s
+#  sourceRef:
+#    kind: GitRepository
+#    name: flux-apps
+#  serviceAccountName: kustomize-controller
+#  path: ./apps/metallb-ips/kind
+#  prune: true
+#  wait: true
+#  timeout: 10m
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
@@ -138,7 +138,7 @@ metadata:
   namespace: flux-system
 spec:
   dependsOn:
-    - name: metallb-ips
+    - name: kube-prometheus-stack
       namespace: flux-system
   interval: 720m0s
   sourceRef:
