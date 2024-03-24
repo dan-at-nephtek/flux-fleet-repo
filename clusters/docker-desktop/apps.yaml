@@ -100,7 +100,7 @@ metadata:
   namespace: flux-system
 spec:
   dependsOn:
-    - name: gatekeeper
+    - name: kube-prometheus-stack
       namespace: flux-system
   interval: 720m0s
   sourceRef:
