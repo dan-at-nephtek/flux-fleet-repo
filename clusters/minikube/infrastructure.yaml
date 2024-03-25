@@ -1,0 +1,85 @@
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: namespaces
+  namespace: flux-system
+spec:
+  interval: 720m0s
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  serviceAccountName: kustomize-controller
+  path: ./infrastructure/namespaces/minikube
+  prune: true
+  wait: true
+  timeout: 10m
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: repositories
+  namespace: flux-system
+spec:
+  dependsOn:
+    - name: namespaces
+      namespace: flux-system
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-gpg
+  interval: 720m0s
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  serviceAccountName: kustomize-controller
+  path: ./infrastructure/repositories/minikube
+  prune: true
+  wait: true
+  timeout: 10m
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: example-secrets
+  namespace: flux-system
+spec:
+  dependsOn:
+    - name: namespaces
+      namespace: flux-system
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-gpg
+  interval: 720m0s
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+  serviceAccountName: kustomize-controller
+  path: ./infrastructure/secrets/minikube
+  prune: true
+  wait: true
+  timeout: 10m
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1
+kind: Kustomization
+metadata:
+  name: secrets
+  namespace: flux-system
+spec:
+  dependsOn:
+    - name: namespaces
+      namespace: flux-system
+  decryption:
+    provider: sops
+    secretRef:
+      name: sops-gpg
+  interval: 720m0s
+  sourceRef:
+    kind: GitRepository
+    name: flux-secrets
+  serviceAccountName: kustomize-controller
+  path: ./infrastructure/secrets/minikube
+  prune: true
+  wait: true
+  timeout: 10m
+#test
