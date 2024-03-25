@@ -37,7 +37,7 @@ flux bootstrap github \
   --owner=dan-at-nephtek \
   --repository=flux-fleet-repo \
   --branch=main \
-  --path=./clusters/minikube \
+  --path=./clusters/kind \
   --personal
 ```
 
