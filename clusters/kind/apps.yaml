@@ -183,7 +183,7 @@ spec:
     kind: GitRepository
     name: flux-apps
   serviceAccountName: kustomize-controller
-  path: ./apps/opentelemetry/kind
+  path: ./apps/opentelemetry-operator/kind
   prune: true
   wait: true
   timeout: 10m

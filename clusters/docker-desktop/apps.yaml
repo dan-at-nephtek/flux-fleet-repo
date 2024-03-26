@@ -145,7 +145,7 @@ spec:
     kind: GitRepository
     name: flux-apps
   serviceAccountName: kustomize-controller
-  path: ./apps/opentelemetry/docker-desktop
+  path: ./apps/opentelemetry-operator/docker-desktop
   prune: true
   wait: true
   timeout: 10m
