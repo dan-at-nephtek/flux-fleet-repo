@@ -5,4 +5,5 @@ resources:
   - ingress.yaml
   - logging.yaml
   - monitoring.yaml
+  - opentelemetry.yaml
   - tempo.yaml
